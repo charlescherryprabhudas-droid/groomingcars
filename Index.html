@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grooming Cars</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f1f5f9;
+color:#0f172a;
+}
+
+:root{
+--brand:#1e3a5f;
+--brand-light:#3b82f6;
+--accent:#f59e0b;
+}
+
+.brand-gradient{
+background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);
+}
+
+.glass{
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(12px);
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+height:64px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+}
+
+.logo-box{
+width:36px;
+height:36px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:700;
+}
+
+.logo-text{
+font-weight:700;
+font-size:18px;
+color:#0f172a;
+}
+
+.logo-text span{
+color:#2563eb;
+}
+
+.nav-links{
+display:flex;
+gap:15px;
+}
+
+.nav-links a{
+text-decoration:none;
+padding:8px 12px;
+font-size:14px;
+font-weight:500;
+color:#475569;
+border-radius:8px;
+transition:0.2s;
+}
+
+.nav-links a:hover{
+background:#e2e8f0;
+color:#0f172a;
+}
+
+.user-section{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.avatar{
+width:32px;
+height:32px;
+border-radius:50%;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:14px;
+font-weight:600;
+}
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+right:0;
+top:40px;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+width:200px;
+overflow:hidden;
+}
+
+.dropdown-menu a{
+display:block;
+padding:10px 14px;
+font-size:14px;
+color:#334155;
+text-decoration:none;
+}
+
+.dropdown-menu a:hover{
+background:#f1f5f9;
+}
+
+.show{
+display:block;
+}
+
+button{
+cursor:pointer;
+border:none;
+border-radius:8px;
+padding:8px 14px;
+font-size:14px;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#0f172a,#1e3a5f);
+color:white;
+}
+
+.btn-outline{
+background:transparent;
+}
+
+.mobile-menu-btn{
+display:none;
+font-size:20px;
+background:none;
+}
+
+.mobile-nav{
+display:none;
+padding:10px 20px;
+background:white;
+border-top:1px solid #e2e8f0;
+}
+
+.mobile-nav a{
+display:block;
+padding:10px 0;
+text-decoration:none;
+color:#334155;
+font-size:14px;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(135deg,#0f172a,#1e3a5f);
+color:white;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+opacity:0.9;
+}
+
+.hero button{
+padding:12px 24px;
+border-radius:30px;
+font-weight:600;
+background:white;
+color:#1e3a5f;
+}
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.mobile-menu-btn{
+display:block;
+}
+
+.mobile-nav.show{
+display:block;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="glass">
+<div class="nav-container">
+
+<a href="#" class="logo">
+<div class="logo-box brand-gradient">🚗</div>
+<div class="logo-text">Grooming<span>Cars</span></div>
+</a>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">My Bookings</a>
+</div>
+
+<div class="user-section">
+
+<button class="btn-outline">Sign In</button>
+<button class="btn-primary">Get Started</button>
+
+<div class="dropdown">
+<div class="avatar" onclick="toggleDropdown()">A</div>
+
+<div id="dropdownMenu" class="dropdown-menu">
+<a href="#">My Bookings</a>
+<a href="#">Partner Dashboard</a>
+<a href="#">Admin Panel</a>
+<a href="#">Logout</a>
+</div>
+
+</div>
+
+<button class="mobile-menu-btn" onclick="toggleMobile()">☰</button>
+
+</div>
+</div>
+
+<div id="mobileNav" class="mobile-nav">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">My Bookings</a>
+</div>
+
+</nav>
+
+<section class="hero">
+<h1>Doorstep Car & Bike Washing</h1>
+<p>Discover, book and review professional washing partners near you.</p>
+<button>Book a Wash</button>
+</section>
+
+<script>
+
+function toggleDropdown(){
+document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+function toggleMobile(){
+document.getElementById("mobileNav").classList.toggle("show");
+}
+
+window.onclick=function(event){
+if(!event.target.matches('.avatar')){
+let dropdown=document.getElementById("dropdownMenu");
+if(dropdown.classList.contains("show")){
+dropdown.classList.remove("show");
+}
+}
+}
+
+</script>
+
+</body>
+</html>
